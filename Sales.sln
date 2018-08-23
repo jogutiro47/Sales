@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.iOS", "Sales\Sales.iO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.UWP", "Sales\Sales.UWP\Sales.UWP.csproj", "{43F8BDFF-2BE7-4AB3-8D8F-7A6E5FFA14CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales", "Sales\Sales\Sales.csproj", "{A3DD6AAC-B029-4963-BE38-07589ABBFB1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sales", "Sales\Sales\Sales.csproj", "{A3DD6AAC-B029-4963-BE38-07589ABBFB1B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Backend", "Sales.Backend\Sales.Backend.csproj", "{ADE6A86F-E76E-4748-8CF7-8B9BAB32C1B9}"
 EndProject
