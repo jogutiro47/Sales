@@ -1,7 +1,10 @@
 ﻿namespace Sales.Services
 {
+    using Newtonsoft.Json;
     using Sales.Common.Models;
     using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
     using System.Threading.Tasks;
 
     public class ApiService
@@ -10,6 +13,30 @@
         {
             try
             {
+                var client = new HttpClient();
+                client.BaseAddress = new Uri(urlbase);
+                var url = $"{prefix}{controller}";
+                var response = await client.GetAsync(url);
+
+                var answer = await response.Content.ReadAsStringAsync();
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = answer,
+                    };
+                }
+
+                //Si hay comunicaciòn y respuesta del servicio
+                // DesSerializar convertir de String a Objetos
+
+                var list = JsonConvert.DeserializeObject<List<T>>(answer);
+                return new Response
+                {
+                    IsSuccess = true,
+                    Result = list,
+                 };
 
             }
             catch (Exception ex)
